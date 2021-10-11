@@ -11,5 +11,5 @@ To start the server use:
 JHey its Ariana
 =======
 
-Hell0 Im yuuki
+Hell0 Im yuki
 >>>>>>> 488e1a17cb61c85e095e5b2fe029532a33ce8dfd
