@@ -1,5 +1,7 @@
 
 /* REPL */
+
+/*
 private void readKdTree(String path) {
     // set up parsing of command line flags
     OptionParser parser = new OptionParser();
@@ -26,10 +28,12 @@ private void readKdTree(String path) {
 
     // TODO: complete your REPL
     if (arguments.length == 2) {
-      /*TODO : arguments[1] is the path (type is String) rn so what
+      */
+/*TODO : arguments[1] is the path (type is String) rn so what
          do we store SQL data as and how do we get it
 
-         line below this comment should do that ^ */
+         line below this comment should do that ^ *//*
+
 
     Node tree1 = new Node();
 
@@ -93,6 +97,7 @@ private void readKdTree(String path) {
     System.out.println("ERROR: Invalid input for REPL");
     }
     }
+*/
 
 
 
@@ -131,28 +136,25 @@ private void readKdTree(String path) {
  */
 public interface INode {
 
-  //getLEftChild getRightChild
+  /**
+   * getLeftChild outputs an INode which is the left child node of the input INode
+   */
+  public INode getLeftChild(INode target);
 
   /**
-   * method that traverses a tree based on various attribute values of the
-   * passed in attrVals and retrieves the decision from the tree
-   * Note: if the attribute of attrVals does not exist, the most common value
-   * (default value) at that node will be returned
-   *
-   * @param attrVals -- an IAttributeDatum that represents the datum you want
-   *                 to determine some decision for
-   * @return an Object, which is the decision after traversing the tree
+   * getRightChild outputs an INode which is the right child node of the input INode
    */
-  public Object lookupDecision(IAttributeDatum attrVals);
+  public INode getRightChild(INode target);
 
   /**
-   * method to print a node, which is recursively called on to display the
-   * entire tree
-   *
-   * @param leadspace -- a String, which is a parameter that helps us increase
-   *                  the spaces in printing while traversing down the tree
+   * getParent outputs an INode which is the parent node of the input INode
    */
-  public void printNode(String leadspace);
+  public INode getParent(INode target);
+
+  /**
+   * getValue outputs a value (of whichever type) which is the value of the input INode
+   */
+  public <T> getValue(INode target);
 }
 
 
@@ -176,16 +178,16 @@ public class Node implements INode {
      * - weight: an int, the weight of the current node
      * - height: an int, the height of the current node
      * - age: an int, the age of the current node
-     * - children: a List<Node>, which contains the two children of the current node
+     * - parent: a Node, which is the parent of the current Node
+     * - leftChild: a Node, which is the left child of the current Node
+     * - rightChild: a Node, which is the right child of the current Node
      */
-    // TODO :  Am I allowed to do List<Node> in Node ?????
-
     int weight;
     int height;
     int age;
-    parent;
-    leftChild;
-    rightChild;
+    Node parent;
+    Node leftChild;
+    Node rightChild;
     //Node or INode
 
   /**
@@ -201,7 +203,7 @@ public class Node implements INode {
       this.weight = w;
       this.height = h;
       this.age = a;
-      this.children = c;
+      //this.children = c;
     }
 
   /**
@@ -270,8 +272,32 @@ public class Node implements INode {
   public String toString {
 
   }
-}
 
+  @Override
+  public Node getLeftChild(Node target){
+    this.leftChild;
+  }
+
+  @Override
+  public Node getRightChild(Node target){
+    this.rightChild;
+  }
+
+  @Override
+  public Node getParent(Node target){
+    this.parent;
+  }
+
+  @Override
+  public List<Integer> getValue(Node target){
+    List<Integer> result = new List<Integer>;
+    result.add(this.weight);
+    result.add(this.height);
+    result.add(this.age);
+
+    return result;
+  }
+}
 
 
 
