@@ -4,4 +4,8 @@ INPUT
 add 3 5
 OUTPUT
 8.0
+<<<<<<< HEAD
 END
+=======
+END
+>>>>>>> 883e5eccf0785729fe7f1587dc9cbd47a7ce0aad
