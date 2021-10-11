@@ -126,7 +126,8 @@ private void readKdTree(String path) {
 
 
 
-
+import java.lang.*;
+import java.util.List;
 
 
 /* KD Tree */
@@ -155,6 +156,14 @@ public interface INode {
    * getValue outputs a value (of whichever type) which is the value of the input INode
    */
   public <T> getValue(INode target);
+
+  Node getLeftChild(Node target);
+
+  Node getRightChild(Node target);
+
+  Node getParent(Node target);
+
+  List<Integer> getValue(Node target);
 }
 
 
@@ -172,7 +181,7 @@ public interface INode {
 /**
  * class Node, which implements INode and represents a node in a KD Tree
  */
-public class Node implements INode {
+public abstract class Node implements INode {
     /**
      * fields for Node
      * - weight: an int, the weight of the current node
@@ -196,14 +205,18 @@ public class Node implements INode {
    * @param w -- int, the weight value
    * @param h -- int, the height value
    * @param a -- int, the age value
-   * @param c -- List<Node>, the children
+   * @param p -- Node, the parent node
+   * @param lc -- Node, the left child node
+   * @param rc -- Node, the right child node
    *
    */
-    public Node(int w, int h, int a, List<Node> c) {
+    public Node(int w, int h, int a, Node p, Node lc, Node rc) {
       this.weight = w;
       this.height = h;
       this.age = a;
-      //this.children = c;
+      this.parent = p;
+      this.leftChild = lc;
+      this.rightChild = rc;
     }
 
   /**
@@ -212,7 +225,7 @@ public class Node implements INode {
    * @param path -- String, the path to the sqlite3 data file
    */
   protected Node load(String path) {
-
+    // TO DO :  after API Lab is done
   }
 
   /**
@@ -222,7 +235,7 @@ public class Node implements INode {
    * @param tid -- int, the target's user_id
    */
   protected List<Integer> similar(int k, int tid) {
-
+    //
   }
 
   /**
@@ -235,7 +248,7 @@ public class Node implements INode {
    * @param a -- int, the target's age
    */
   protected List<Integer> similarWHA(int k, int w, int h, int a) {
-
+    //
   }
 
   /**
@@ -246,8 +259,7 @@ public class Node implements INode {
    * @param tid -- int, the target's user_id
    */
   protected String classify(int k, int tid) {
-    new List<Integer> result1 = similar(k, tid);
-
+    //
   }
 
 
@@ -261,8 +273,7 @@ public class Node implements INode {
    * @param a -- int, the target's age
    */
   protected String classifyWHA(int k, int w, int h, int a) {
-    new List<Integer> result1 = similarWHA(k, int w, int h, int a);
-
+    //
   }
 
   /**
@@ -270,22 +281,22 @@ public class Node implements INode {
    * that is printed in the end and shown to the user
    */
   public String toString {
-
+    //
   }
 
   @Override
-  public Node getLeftChild(Node target){
-    this.leftChild;
+  public INode getLeftChild(INode target) {
+    return this.leftChild;
   }
 
   @Override
-  public Node getRightChild(Node target){
-    this.rightChild;
+  public INode getRightChild(INode target) {
+    return this.rightChild;
   }
 
   @Override
-  public Node getParent(Node target){
-    this.parent;
+  public INode getParent(INode target) {
+    return this.parent;
   }
 
   @Override
@@ -303,15 +314,21 @@ public class Node implements INode {
 
 
 
+/*
+
+
 
 /// Users.java
 import recommender.src.IAttributeDatum;
 
+*/
 /**
  * Users class, which implements IAttributeDatum (is a type of datum)
- */
+ *//*
+
 public class Users implements IAttributeDatum {
-    /**
+    */
+/**
      * fields for Users
      * - user_id: Integer ID uniquely identifying a user
      * - weight: The weight of the user in lbs [###lbs]
@@ -319,7 +336,8 @@ public class Users implements IAttributeDatum {
      * - height: The height of the user in feet and inches [#’##”]
      * - age: Integer age of the user in years
      * - body_type: The body type of the user, just a string
-     */
+     *//*
+
     int user_id;
     int weight;
     int bust_size;
@@ -327,7 +345,8 @@ public class Users implements IAttributeDatum {
     int age;
     String body_type;
 
-    /**
+    */
+/**
      * Constructor for Users class
      *
      * @param uid -- user_id
@@ -337,7 +356,8 @@ public class Users implements IAttributeDatum {
      * @param a -- age
      * @param bt -- body_type
      *
-     */
+     *//*
+
     public Users( int uid, int w, int bs, int h, int a, String bt) {
       this.user_id = uid;
       this.weight = w;
@@ -371,4 +391,5 @@ public class Users implements IAttributeDatum {
     /// TreeGenerator.java
 
 
+*/
 }
