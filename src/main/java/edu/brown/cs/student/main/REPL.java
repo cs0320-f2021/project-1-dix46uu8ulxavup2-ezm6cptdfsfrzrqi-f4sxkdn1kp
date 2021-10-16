@@ -2,10 +2,16 @@ package edu.brown.cs.student.main;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.HashMap;
+
 
 public class REPL {
-    public REPL(){
 
+    HashMap<String, Collable> _commands;
+
+    public REPL(){
+        _commands = new HashMap<>();
+        registerAllCommands();
     }
 
     public void read(){
@@ -15,16 +21,8 @@ public class REPL {
                 try {
                     input = input.trim();
                     String[] arguments = input.split(" ");
+                    System.out.println(_commands.get(arguments[0]).run(arguments));
 
-
-                    if (arguments[0].equals("stars")){
-                        System.out.println("stars");
-                        //FileReader fr = new FileReader();
-                        //System.out.println(fr.readCVS("/Users/yukihayashita/Desktop/cs32/onboarding-eZm6CPtdFsfRzrqi/data/stars/ten-star.csv").get(9)[4]);
-
-                    } else if (arguments[0].equals("naive-neighbors")){
-                        System.out.println("naive-neighbors");
-                    }
                 } catch (Exception e) {
                     // e.printStackTrace();
                     System.out.println("ERROR: We couldn't process your input");
@@ -34,6 +32,16 @@ public class REPL {
             e.printStackTrace();
             System.out.println("ERROR: Invalid input for REPL");
         }
+    }
+
+    private void register(String command, Collable collable){
+        _commands.put(command, collable);
+    }
+
+    //register all commands and their corresponding classes here!
+    private void registerAllCommands(){
+        this.register("add", new MathBot());
+        this.register("subtract", new MathBot());
     }
 
 }

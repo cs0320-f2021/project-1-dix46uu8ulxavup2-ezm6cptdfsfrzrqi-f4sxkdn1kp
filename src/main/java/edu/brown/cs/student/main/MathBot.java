@@ -1,6 +1,7 @@
 package edu.brown.cs.student.main;
 
-public class MathBot {
+
+public class MathBot implements Collable{
 
   /**
    * Default constructor.
@@ -31,4 +32,12 @@ public class MathBot {
     return num1 - num2;
   }
 
+  @Override
+  public Object run(String[] arguments) {
+    if (arguments[0].equals("add")){
+      return this.add(Double.valueOf(arguments[1]),Double.valueOf(arguments[2]));
+    } else {
+      return this.subtract(Double.valueOf(arguments[1]), Double.valueOf(arguments[2]));
+    }
+  }
 }
