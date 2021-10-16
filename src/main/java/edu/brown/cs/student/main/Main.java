@@ -1,11 +1,8 @@
 package edu.brown.cs.student.main;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.io.StringWriter;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.Map;
 
 import com.google.common.collect.ImmutableMap;
@@ -35,7 +32,7 @@ public final class Main {
    * @param args An array of command line arguments
    */
   public static void main(String[] args) {
-    new Main(args).readStar();
+    new Main(args).run();
   }
 
   private String[] args;
@@ -44,7 +41,7 @@ public final class Main {
     this.args = args;
   }
 
-  private void readStar(String path) {
+  private void run() {
     // set up parsing of command line flags
     OptionParser parser = new OptionParser();
 
@@ -67,25 +64,17 @@ public final class Main {
         try {
           input = input.trim();
           String[] arguments = input.split(" ");
-          // System.out.println(arguments[0]);
 
-          // TODO: complete your REPL by adding commands for addition "add" and subtraction
-          //  "subtract"
 
-          if (arguments.length == 3) {
-            MathBot mb1 = new MathBot();
-            double num1 = Double.parseDouble(arguments[1]);
-            double num2 = Double.parseDouble(arguments[2]);
+          if (arguments[0].equals("stars")){
+            System.out.println("stars");
+            //FileReader fr = new FileReader();
+            //System.out.println(fr.readCVS("/Users/yukihayashita/Desktop/cs32/onboarding-eZm6CPtdFsfRzrqi/data/stars/ten-star.csv").get(9)[4]);
 
-            //add
-            if (arguments[0].equals("add")) {
-              System.out.println(mb1.add(num1, num2));
-            }
-
-            //subtract
-            if (arguments[0].equals("subtract")) {
-              System.out.println(mb1.subtract(num1, num2));
-            }
+          } else if (arguments[0].equals("naive-neighbors")){
+            System.out.println("naive-neighbors");
+          } else if (arguments[0].equals("add")){
+            System.out.println(new MathBot().add(Double.valueOf(arguments[1]), Double.valueOf(arguments[2])));
           }
         } catch (Exception e) {
           // e.printStackTrace();
@@ -96,6 +85,7 @@ public final class Main {
       e.printStackTrace();
       System.out.println("ERROR: Invalid input for REPL");
     }
+
   }
 
   private static FreeMarkerEngine createEngine() {
@@ -167,78 +157,3 @@ public final class Main {
     }
   }
 }
-
-
-/*
-*             //k nearest neighbor
-
-            //getting naive neighbors k from star csv
-            // 1 if input is "naive_neighbors <k> <x> <y> <z>" or "naive_neighbors <k> <"name">"
-            if (arguments[0].equals("naive_neighbors") && (Integer.parseInt(arguments[1]) >= 0)) {
-
-              // if k = 0 then just return empty or just end the REPL
-              // if k != 0 then store k number and target star info and new List without target
-              if (Integer.parseInt(arguments[1]) == 0) {
-                System.out.println("");
-              } else {
-                int k = Integer.parseInt(arguments[1]);
-
-                // 2 search through to get StarID of k number of stars nearest to target star
-                //   if there are multiple same distanced stars, then randomly pick one out of them
-
-              }
-            }
-            *
-            *
-            * else if (arguments.length == 2) {
-            if (arguments[0].equals("stars")) {
-
-              //reading star CSV
-              // 1  Get an entry of data from the CSV
-
-              // valid input header line at the top is 'StarID','ProperName','X','Y','Z'
-              // we assume there are no duplicate star names and that no star name contains a comma
-
-              // invalid input creates error message:
-              // "file does not conform with format: StarID, Name, X, Y, Z coordinates"
-
-
-              // 2  Split the data into individual fields
-              // (i.e. retrieving each column from something like "Colton,20,Computer Science,2021")
-
-              // 3  Storing that parsed out data in some kind of data structure (like a List)
-
-              if (arguments[1].endsWith(".csv")) {
-                BufferedReader starReader = new BufferedReader(new java.io.FileReader(arguments[1]));
-                String nextLine = starReader.readLine();
-                System.out.println("TODO");
-              }
-            }
-          }
-          *
-          *
-          *
-          *
-          * else if (arguments.length == 5) {
-            if (arguments[0].equals("naive_neighbors") && (Integer.parseInt(arguments[1]) >= 0)) {
-              if (Integer.parseInt(arguments[1]) == 0) {
-                System.out.println("");
-              } else {
-                int k = Integer.parseInt(arguments[1]);
-                double x = Double.parseDouble(arguments[2]);
-                double y = Double.parseDouble(arguments[3]);
-                double z = Double.parseDouble(arguments[4]);
-
-              }
-            }
-            //   if k != 0 then store k number and target star info and new List without target
-
-            // 2 search through to get StarID of k number of stars nearest to target star
-            //   if there are multiple same distanced stars, then randomly pick one out of them
-
-            // 3 if else, throw error: "Incorrect input. Correct format is:
-            // 'naive_neighbors <k> <x> <y> <z>' or 'naive_neighbors <k> <"name">'"
-
-          }
-*
-* */

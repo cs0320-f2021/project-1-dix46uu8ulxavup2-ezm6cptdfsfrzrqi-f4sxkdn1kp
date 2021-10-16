@@ -47,7 +47,7 @@ public abstract class Node implements INode {
    *
    * @param data -- List of objects, all the objects from the API data
    */
-  protected Node load(List<T> data) {
+  //protected Node load(List<T> data) {
     // sort - by depth we decide if it's sorted by height, weight, and age
     // using recursion to go through
     // KDTree class
@@ -56,7 +56,7 @@ public abstract class Node implements INode {
     // --> get appropriate coordinate for certain depth (using mod by length of array)
 
     // parsing data from API is getting an Object - should happen in API Lab
-  }
+  //}
 
   /**
    * Similar takes in the k and target user ID and outputs a list of k closest neighbor user IDs
@@ -66,6 +66,7 @@ public abstract class Node implements INode {
    */
   protected List<Integer> similar(int k, int tid) {
     // nearest neighbor / Euclidean distance under KDTree class
+    return null;
   }
 
   /**
@@ -78,7 +79,7 @@ public abstract class Node implements INode {
    * @param a -- int, the target's age
    */
   protected List<Integer> similarWHA(int k, int w, int h, int a) {
-    //
+    return null;
   }
 
   /**
@@ -89,7 +90,7 @@ public abstract class Node implements INode {
    * @param tid -- int, the target's user_id
    */
   protected String classify(int k, int tid) {
-    //
+    return null;
   }
 
 
@@ -103,15 +104,15 @@ public abstract class Node implements INode {
    * @param a -- int, the target's age
    */
   protected String classifyWHA(int k, int w, int h, int a) {
-    //
+    return null;
   }
 
   /**
    * toString converts the result of similar or similarWHA (which are lists of ints) into a string
    * that is printed in the end and shown to the user
    */
-  public String toString {
-    //
+  public String toString(){
+    return null;
   }
 
   @Override
@@ -131,11 +132,14 @@ public abstract class Node implements INode {
 
   @Override
   public List<Integer> getValue(Node target){
+    /*
     List<Integer> result = new List<Integer>;
     result.add(this.weight);
     result.add(this.height);
     result.add(this.age);
 
-    return result;
+     */
+
+    return null;
   }
 }

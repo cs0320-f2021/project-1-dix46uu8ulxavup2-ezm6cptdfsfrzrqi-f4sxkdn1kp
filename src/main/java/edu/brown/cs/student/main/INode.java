@@ -25,7 +25,7 @@ public interface INode {
   /**
    * getValue outputs a value (of whichever type) which is the value of the input INode
    */
-  public <T> getValue(INode target);
+  //public <T> getValue(INode target);
 
   Node getLeftChild(Node target);
 
