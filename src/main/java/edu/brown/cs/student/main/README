@@ -1,10 +1,12 @@
 Project 1
 aclark21, yhayash2, wlee41
-total time: (ariana: ~40 hours, Yuki: , Wonyoung: )
+total time: (ariana: ~40 hours, Yuki: , Wonyoung: ~35 hours)
+
 API Quetions:
 - On average it should take about 2 seconds to get the right answer
 - I am going to verify my answer 3 times
 - The upper limit on the number of API calls is going to be 10
+
 Design Choices:
 
 Errors/bugs:
