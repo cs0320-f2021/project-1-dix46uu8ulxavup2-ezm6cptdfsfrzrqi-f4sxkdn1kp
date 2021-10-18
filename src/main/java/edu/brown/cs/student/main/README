@@ -1,7 +1,7 @@
 Project 1
 aclark21, yhayash2, wlee41
-total time: (ariana: ~40 hours, Yuki: , Wonyoung: )
-API Quetions:
+total time: (ariana: ~50 hours, Yuki: , Wonyoung: )
+API Questions:
 - On average it should take about 2 seconds to get the right answer
 - I am going to verify my answer 3 times
 - The upper limit on the number of API calls is going to be 10
@@ -9,11 +9,15 @@ API Quetions:
 **Design Choices**:
 API: I decided to make my API Aggregator (API.java class) test the following:
 1. Speed, if the link takes less than 2 seconds
+*if I had time:
+2. I would add another method that checks for a non-error message by running the endpoints through a loop of 10 until there is not a malicious error
+3. I would also like to add a method that checks to make sure that some of the endpoints dont go rogue and show data thats not from their type
 Errors/bugs:
 
 Tests:
 - (KD-tree): Created system tests for each command, similar and classify. Also made test suite for possible errors for
     both of the commands
+- (API): Did not create tests
 
 How to:
 - Run the tests:
@@ -23,4 +27,3 @@ How to:
 -Build and run your program:
     - Build: mvn package
 
-https://guides.github.com/features/mastering-markdown/

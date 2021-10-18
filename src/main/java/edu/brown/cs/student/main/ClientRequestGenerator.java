@@ -16,19 +16,17 @@ import java.time.Duration;
  */
 public class ClientRequestGenerator {
 
-
     /**
-     * Similar to the introductory GET request, but restricted to api key holders only. Try calling it without the API
-     * Key configured and see what happens!
-     *
+     * Similar to the introductory GET request, but restricted to api key holders only.
+     * @param s - the specific url we're working with
      * @return an HttpRequest object for accessing the secured resource.
      */
     public static HttpRequest getSecuredGetRequest(String s) {
         ClientAuth clientAuth = new ClientAuth();
-        // TODO get the secret API key by using the ClientAuth class.
+        //getting api key
         String key = ClientAuth.getApiKey();
         String reqUri = s + "?auth=aclark21&key=" + key;
-        // TODO build and return a new GET HttpRequest with an api key header.
+        //build and return a new GET HttpRequest with an api key header.
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder(URI.create(reqUri))
                 .header("x-api-key", key)
