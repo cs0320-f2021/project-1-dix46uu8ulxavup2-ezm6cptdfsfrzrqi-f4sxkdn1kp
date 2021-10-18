@@ -8,9 +8,13 @@ API Quetions:
 - The upper limit on the number of API calls is going to be 10
 
 Design Choices:
+Chose to implement API and KD Tree. 
+
+Worked with INode for KD Tree where INode is an interface and Node is a type of INode that we implement in Rent the Runway. 
+
 
 Errors/bugs:
-- Code does not run because KD Tree implementation is incomplete and insufficient. 
+- Code does not run because KD Tree implementation is incomplete and insufficient. However API and REPL is ready.
 
 
 
