@@ -10,7 +10,15 @@ Design Choices:
 Errors/bugs:
 
 Tests:
+- (KD-tree): Created system tests for each command, similar and classify. Also made test suite for possible errors for
+    both of the commands
 
 How to:
+- Run the tests:
+    - KD-tree: run ./cs32-test src/test/system/KD-tree/*.test
+    - KD-tree-error: run ./cs32-test src/test/system/KD-tree-error/*.test
+
+-Build and run your program:
+    - Build: mvn package
 
 https://guides.github.com/features/mastering-markdown/
