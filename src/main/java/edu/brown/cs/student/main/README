@@ -10,6 +10,9 @@ API Quetions:
 Design Choices:
 
 Errors/bugs:
+- Code does not run because KD Tree implementation is incomplete and insufficient. 
+
+
 
 Tests:
 - (KD-tree): Created system tests for each command, similar and classify. Also made test suite for possible errors for
