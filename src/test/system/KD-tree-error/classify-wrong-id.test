@@ -1,0 +1,8 @@
+ARGS
+
+INPUT
+users data/project-1/justusersSMALL.json
+classify 5 1234
+OUTPUT
+Error:
+END

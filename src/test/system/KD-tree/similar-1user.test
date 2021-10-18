@@ -1,8 +1,9 @@
 ARGS
 
 INPUT
-users /data/project-1/justusersSMALL.json
+users data/project-1/justusersSMALL.json
 similar 1 151944
 OUTPUT
-151944
+Loaded 15 users from data/project-1/justusersSMALL.json
+829124
 END

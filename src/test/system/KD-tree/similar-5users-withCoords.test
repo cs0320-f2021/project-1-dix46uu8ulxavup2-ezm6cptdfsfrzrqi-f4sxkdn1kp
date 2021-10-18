@@ -2,7 +2,7 @@ ARGS
 
 INPUT
 users data/project-1/justusersSMALL.json
-similar 5 151944
+similar 5 190 70 21
 OUTPUT
 Loaded 15 users from data/project-1/justusersSMALL.json
 829124
