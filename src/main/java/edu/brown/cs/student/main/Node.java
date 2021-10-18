@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * class Node, which implements INode and represents a node in a KD Tree
+ * implemented for Rent the Runway
  */
 public abstract class Node implements INode {
   /**
