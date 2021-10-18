@@ -1,4 +1,6 @@
-package edu.brown.cs.student.client;
+package edu.brown.cs.student.main;
+
+import edu.brown.cs.student.main.API;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -32,12 +34,12 @@ public class ApiClient {
 
     }
 
-    public void makeRequest(HttpRequest req) {
+    public String makeRequest(HttpRequest req) {
 
         try {
             HttpResponse<String> apiResponse = client.send(req, HttpResponse.BodyHandlers.ofString());
-            System.out.println("Status " + apiResponse.statusCode());
-            System.out.println(apiResponse.body());
+            API API = new API();
+            return apiResponse.body();
 
         } catch (IOException ioe) {
             System.out.println("An I/O error occurred when sending or receiving data.");
@@ -56,6 +58,7 @@ public class ApiClient {
             System.out.println("There was a security configuration error.");
             System.out.println(se.getMessage());
         }
+        return null;
     }
 }
 

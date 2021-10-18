@@ -5,8 +5,10 @@ API Quetions:
 - On average it should take about 2 seconds to get the right answer
 - I am going to verify my answer 3 times
 - The upper limit on the number of API calls is going to be 10
-Design Choices:
 
+**Design Choices**:
+API: I decided to make my API Aggregator (API.java class) test the following:
+1. Speed, if the link takes less than 2 seconds
 Errors/bugs:
 
 Tests:
